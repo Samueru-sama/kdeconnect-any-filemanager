@@ -11,7 +11,7 @@ if [ -z "$PHONEID" ]; then
 fi
 
 # Mount phone
-qdbus-qt5 org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp mountAndWait || { echo "Error mounting"; exit 1; }
+qdbus6 org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp mountAndWait || { echo "Error mounting"; exit 1; }
 
 # Get paths
 PHONEPATHS=$(qdbus-qt5 org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp getDirectories 2>/dev/null)
