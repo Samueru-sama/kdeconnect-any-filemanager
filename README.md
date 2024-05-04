@@ -9,3 +9,9 @@ Simply run the script every time your filemanager is opened, as due to limitatio
 Limitations? 
 
 Right now you may only be able to use it to mount one phone at the time.
+
+---------------------------------------------------------
+
+# read this 
+
+If your distro has not updated to using `qdbus6` you will need to edit the script and replace `qdbus6` for `qdbus-qt5` or whatever name is being used in your distro.
