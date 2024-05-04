@@ -14,7 +14,7 @@ fi
 qdbus6 org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp mountAndWait || { echo "Error mounting"; exit 1; }
 
 # Get paths
-PHONEPATHS=$(qdbus-qt5 org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp getDirectories 2>/dev/null)
+PHONEPATHS=$(qdbus6 org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp getDirectories 2>/dev/null)
 PHONEPATH1=$(echo "$PHONEPATHS" | awk 'NR==1 {print $1}' | sed 's/://g' )
 PHONEPATH2=$(echo "$PHONEPATHS" | awk 'NR==2 {print $1}' | sed 's/://g' )
 DIRNAME1=$(echo "$PHONEPATHS" | awk 'NR==1 {print $2}' )
