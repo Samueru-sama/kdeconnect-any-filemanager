@@ -9,6 +9,10 @@ if ! command -v kdeconnect-cli >/dev/null 2>&1; then
 	echo "Can't find kdeconnect-cli, is it installed?"; exit 1
 fi
 
+if ! command -v sshfs >/dev/null 2>&1; then
+	echo "You need sshfs for this script to work"; exit 1
+fi
+
 # CHECK FOR QDBUS
 if command -v qdbus6 >/dev/null 2>&1; then
     QDBUS=qdbus6
@@ -38,4 +42,4 @@ mkdir -p "$PHONEDIR"
 find "$PHONEDIR" -xtype l -delete # Clears broken links
 [ -e "$PHONEPATH1" ] && ln -s "$PHONEPATH1" "$PHONEDIR/$DIRNAME1" 2>/dev/null
 [ -e "$PHONEPATH2" ] && ln -s "$PHONEPATH2" "$PHONEDIR/$DIRNAME2" 2>/dev/null
-ln -s "$PHONEDIR" "$HOME"/ 2>/dev/null
+ln -s "$PHONEDIR" "$HOME" 2>/dev/null
