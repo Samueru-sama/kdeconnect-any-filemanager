@@ -4,7 +4,7 @@ This script makes it very easy to use kdeconnect with file manager like Thunar, 
 
 # How to use? 
 
-Simply run the script every time your filemanager is opened, as due to limitations of kdeconnect a phone cannot be mounted the if device screen is turned off. For window manager users this as a simple as running the script alongside your filemager with the same hotkey.
+Simply run the script once and that's it, it takes care of the rest including reconnecting the phone. Configure your DE/WM to start the script on login.
 
 # Limitations? 
 
