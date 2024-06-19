@@ -15,6 +15,7 @@ fi
 if ! pgrep kdeconnectd >/dev/null 2>&1; then # Tries to start kdeconnectd if it isn't running
 	kdeconnectd 2>/dev/null &
 	/usr/lib/kdeconnectd 2>/dev/null &
+	/usr/libexec/kdeconnectd 2>/dev/null &
 	sleep 1 && pgrep kdeconnectd 1>/dev/null \
 	|| { echo "Could not start kdeconnectd, is it installed?"; notify-send "Missing dependency!"; exit 1; }
 fi
@@ -33,7 +34,7 @@ _mount_and_link_phone() {
 	if ! mount | grep kdeconnect >/dev/null 2>&1; then
 		"$QDBUS" org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp mountAndWait \
 		|| { notify-send -u critical "Kdeconnect failed to mount phone"; exit 1; }
-		notify-send "Phone connected and mounted"
+		mount | grep kdeconnect && notify-send "Phone connected and mounted"
 	fi
 	
 	PHONEPATHS=$("$QDBUS" org.kde.kdeconnect /modules/kdeconnect/devices/"$PHONEID"/sftp getDirectories 2>/dev/null)
