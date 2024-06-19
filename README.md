@@ -1,6 +1,6 @@
 This script makes it very easy to use kdeconnect with file manager like Thunar, as it uses `kdeconnect-cli` and either `qdbus6` or `qdbus-qt5` to mount the phone and symlink its location to $HOME. It also supports phones with SD card. Example in Thunar and PCManFM:
 
-![image](https://github.com/Samueru-sama/kdeconnect-any-filemanager/assets/36420837/a0599b94-7aeb-40f2-baca-7ff8810d99a4)
+![image](https://github.com/Samueru-sama/kdeconnect-any-filemanager/assets/36420837/071692bd-88ca-4362-81d4-3dbb8971bfd7)
 
 # How to use? 
 
